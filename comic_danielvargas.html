@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang='es'>
+  <head>
+
+    <!--
+
+     Objetivos de la actividad:
+        -Cambiar la fuente de  las  imágenes
+        -Cambiar el texto
+        -Asignación de clases en los atributos
+        -Copiar nodos html
+    -->
+
+    <!-- 
+    En este proyecto se puede crear tu propia tira cómica utilizando y Fotos cuadradas tiene - entonces ¿por qué no usar las fotos de tu cuenta de Instagram o de Facebook?  Tendrás
+    ser capaz de añadir imágenes, ag regar, copiar en leyendas y globos de la historia.  También aprenderemos cómo hacer más escenas mediante la adición de las más viñetas al comic.
+    -->
+
+  <!--
+    Vamos a empezar.
+
+    1) LEER LOS COMENTARIOS. Esto es un comentario. Todo dentro de la etiqueta de comentarios de HTML o  con los signos' /* */' en lenguaje de estilos  CSS, 
+	no se procesa como código, pero aparecen en el  sobre el código. 
+	Para este proyecto, los comentarios los usaremos para  dar instrucciones, consejos y guías para completar el proyecto, 
+	así que debemos leer todos los comentarios que nos encontremos para obtener una comprensión de las tareas que se nos ha pedido  hacer.
+    2) HABITUARNOS Y  ORIENTARNOS DENTRO EL CÓDIGO.
+     HTML se compone de etiquetas que este aspecto<p> </p>.
+	Las etiquetas te dicen algo sobre la información contenida dentro de las mismas. 
+  -->
+
+
+
+    <title>Un comic en html</title>
+	<meta charset='utf-8'">
+
+  <!-- Este es el estilo para el comic -->
+  <style>
+       /* Esto es un comentario CSS*/
+          /*  CSS sirve para dar estilo */
+               /*  en principio no lo vamos a trabajar aunque podemos echarle un vistazo */
+    body {
+      background-color:#EFEFEF;
+      font-family:"Comic Sans MS", sans-serif;
+      line-height:1.2;
+      text-align: center;
+      padding: 1em 0 0 20px;
+    }
+    h1 {
+      text-transform: uppercase;
+      text-shadow: 4px 4px 0px black;
+      font-size:40px;
+      color:purple;
+    }
+    h2{
+      color: red;
+      text-transform: initial;
+
+    }
+    .comic {
+      max-width:826px;
+      margin:60px auto 0;
+    }
+    .scene {
+      width: 250px;
+      height:250px;
+      border:3px solid black;
+      background: #fff;
+      margin:8px;
+      display: inline-block;
+      position: relative;
+    }
+    .scene img {
+      width:100%;
+      height:100%;
+      display: block;
+    }
+    .caption {
+      padding:10px;
+      margin:0;
+      position: absolute;
+      left:0;
+      right:0;
+      text-align:left;
+      top:0;
+    }
+    .caption.bottom {
+      bottom:0;
+      top:auto;
+      border-top:2px solid black;
+      background-color: orange;
+    }
+    .caption.top {
+      top:0;
+       border-bottom:2px solid black;
+       background-color: aquamarine;
+    }
+    .speech {
+      width:40%;
+      border-radius:50%;
+      border:2px solid black;
+      margin:0;
+      position: absolute;
+      z-index:1;
+      background: Snow ;
+      padding:20px;
+      top:-15px;
+      text-align: center;
+    }
+ 
+    /* CSS avanzado para la orientación de los globos con respecto al personaje*/
+    .speech:after {
+      border-color: snow transparent;
+      border-style: solid;
+      border-width: 13px 13px 0;
+      bottom: -11px;
+      content: "";
+      display: block;
+      left: 50%;
+      margin-left:-14px;
+      position: absolute;
+      width: 0;
+    }
+    .speech:before {
+      border-color: black transparent;
+      border-style: solid;
+      border-width: 16px 16px 0;
+      bottom: -15px;
+      content: "";
+      display: block;
+      left: 50%;
+      margin-left:-17px;
+      position: absolute;
+      width: 0;
+    }
+    .speech.left {
+      left:-15px;
+    }
+    .speech.right {
+      right:-15px;
+    }
+
+    footer {
+      clear:both;
+    }
+  </style>
+
+</head>
+<body>
+
+  <!-- 
+    Tarea 1: 
+Primero, ¿por qué no cambiar el encabezado <h1> para dar al cómic un nombre más apropiado.  
+Cualquier texto que va entre las etiquetas <h1> y </h1> se convertirá en el título.</h1>  -->
+  <h1>Un dia programando</h1>
+  <h2>Todo puede ser fruto de nuestra imaginación </h2>
+
+  <p>Aprendiendo los lenguajes de la web... </p>
+
+  <!-- 
+  Aquí es donde comienza el cómic. 
+    El <div> con class 'comic'envuelve cada div 'escena  o viñeta ' y contiene a todas las escenas.</div>
+  -->
+  <div class="comic">
+
+      <!--
+        Tarea2
+        El  HTML  del div inferior es una escena de a comic.
+        Empiece por cambiar las imágenes de la escena con una de tus propias fotos.  
+        Como la escena es cuadrada una foto cuadrada funcionará mejor. ¿Por qué no obtener la url de la imagen de una de tus fotos de Instagram?   Cambiar el valor del atributo src de la etiqueta img que va entre las comillas dobles
+      -->
+      <div class="scene">
+        <p class="caption bottom">Un hecho insólito acaeció en el horizonte...</p>
+        <p class="speech left">¡Mira...! ¿Es un avión?</p>
+        <img src="data:image/jpeg;base64,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" alt="mujer" />
+      </div>
+
+       <!-- 
+    ¡ Magnífico! Ahora veamos algunos globos y leyendas incorporados en  otras escenas.
+
+Tarea 3:
+        Ver la primera escena anterior.  Tiene un título y un bocadillo de diálogo.
+        Copiando el párrafo del discurso<p>, adicione una burbuja del discurso de la segunda escena más abajo y luego cambiar su texto.
+      -->
+      <div class="scene">
+        <p class="caption top">.. Libardo no lo podia creer.</p>
+        <img src="http://farm7.staticflickr.com/6022/5918997962_f472e3ab8f.jpg" alt="" />
+      </div>
+
+      <!-- 
+       Dependiendo de la foto usemos, es posible que desee mover los subtítulos a la 'parte superior' o la 'inferior',
+         o el globo de diálogo "izquierda o derecha".
+
+         Tarea 4:
+         Mira la cuarta escena a continuación. Tiene un bocadillo en el lado izquierdo.
+         Cambie el nombre de la clase "left" a "right" para que el bocadillo se mueva hacia el lado derecho.
+         Si desea que una leyenda esté en la parte superior, nos aseguramos  de que tenga la clase 'top', si lo deseamos en la parte inferior, asegúrese de que tenga la clase 'bottom'. Podemos hacer este cambio en la escena o viñetas
+      -->
+      <div class="scene">
+        <p class="speech right">Yo solo puedo hacerlo</p>
+        <p class="caption bottom"> Es un maleante</p>
+        <img src="http://farm1.staticflickr.com/184/423566194_4513adf82d.jpg" alt="" />
+      </div>
+
+      <div class="scene">
+        <p class="speech right">Cualquier cosa es posible ser simulado...</p>
+        <img src="http://farm9.staticflickr.com/8290/7762873604_216c58c99e.jpg" alt="" />
+      </div>
+      
+      <div class="scene">
+        <p class="speech right"> mediante HTML, CSS, Javascript y conseguiremos que ...</p>
+        <img src="http://farm8.staticflickr.com/7289/8735312953_992e5a8b8f.jpg" alt="" />
+      </div>
+
+      <div class="scene">
+        <p class="caption top">todo sea producto de nuestra imaginación</p>
+        <img src="http://farm7.staticflickr.com/6231/6315319040_ece0b381a2.jpg" alt="" />
+      </div>
+
+       <!-- 
+        ¿ Este es el final del cómic :( ?
+        ¿Queremos crear a un cómic más grande?
+
+        Tarea 5:
+        Copiar el código HTML de tres 'escena' y pegar por debajo de este comentario... ahora tenemos 3 escenas más en nuestro comic ;)
+      -->
+      
+      <div class="scene">
+        <p class="speech right">Siiiiiuu.</p>
+        <p class="caption bottom"> LLego el bicho </p>
+        <img src="https://img.a.transfermarkt.technology/portrait/big/8198-1685035469.png?lm=1" alt="bicho" />
+      </div>
+      
+      <div class="scene">
+        <p class="speech right"> Hola cristiano</p>
+        <img src="https://www.cidob.org/dass-2019041701/var/plain/storage/images/new_site/biografias_lideres_politicos/europa/espana/pedro_sanchez_perez_castejon/2097462-20-esl-ES/pedro_sanchez_perez_castejon.jpg" alt="pedro">
+      </div>
+
+      <div class="scene">
+          <p class="speech right">Os quiero</p>
+          <p class="caption bottom"> Fueron felices </p>
+          <img src=data:image/jpeg;base64,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 alt="perro" />
+        </div>
+
+  </div>
+
+  
+  
+
+
+
+  <footer>
+    <p> Docente: Daniel Vargas de Miguel</p>
+      <!-- Créditos  para imágenes -->
+   <p> Todas las imágenes tomadas de <a href="http://flickr.com">flickr.com</a></p>
+  </footer>
+
+</body>
+</html>
